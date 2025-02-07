@@ -4,33 +4,367 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asmar Ahmad - Data Science Portfolio</title>
+    
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Required Libraries -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="app.css">
+    <meta name="description" content="Asmar Ahmad - Data Scientist Portfolio showcasing expertise in Machine Learning, Deep Learning, and Data Analysis">
+    <meta name="keywords" content="data science, machine learning, deep learning, portfolio, python, tensorflow">
+    <meta name="author" content="Asmar Ahmad">
+    <meta property="og:title" content="Asmar Ahmad - Data Science Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing data science projects and expertise">
+    <meta property="og:image" content="[Your Profile Image URL]">
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner">
+                <i class="fas fa-brain loader-icon"></i>
+                <div class="loading-text">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor"></div>
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-opacity-90 bg-gray-900 backdrop-filter backdrop-blur-lg z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 text-2xl font-bold bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">
-                    Asmar Ahmad
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold glitch-text" data-text="Asmar Ahmad">
+                        <span class="text-gradient">Asmar Ahmad</span>
+                    </h1>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#hero" class="text-white hover:text-indigo-400 transition-colors">Home</a>
-                    <a href="#projects" class="text-white hover:text-indigo-400 transition-colors">Projects</a>
-                    <a href="#about" class="text-white hover:text-indigo-400 transition-colors">About</a>
-                    <a href="#contact" class="text-white hover:text-indigo-400 transition-colors">Contact</a>
+                    <a href="#about" class="nav-link hover-effect">About</a>
+                    <a href="#timeline" class="nav-link hover-effect">Journey</a>
+                    <a href="#projects" class="nav-link hover-effect">Projects</a>
+                    <a href="#certifications" class="nav-link hover-effect">Certifications</a>
+                    <a href="#contact" class="nav-link hover-effect">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu translate-x-full">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#timeline" class="mobile-link">Journey</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#certifications" class="mobile-link">Certifications</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
     <!-- Hero Section -->
-    <div id="hero" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 section-animate">
-        <div class="text-center">
-            <h1 class="hero-title mb-4">Data Scientist</h1>
-            <p class="text-xl mb-8 text-gray-300">Transforming Data into Insights</p>
-            <div class="flex justify-center space-x-6 mb-8">
+    <section id="hero" class="min-h-screen flex items-center justify-center relative">
+        <div class="particles-js" id="particles-js"></div>
+        <div class="text-center relative z-10" data-aos="fade-up">
+            <div class="hero-content">
+                <div class="hero-icon animate-float">
+                    <i class="fas fa-brain text-6xl text-gradient"></i>
+                </div>
+                <h2 class="hero-title text-5xl md:text-7 xl font-bold mb-4">Data Scientist</h2>
+                <p class="typing-text text-xl md:text-2xl text-gray-300 mb-8"></p>
+                <div class="social-links flex justify-center space-x-6 mb-8">
+                    <a href="https://github.com/AsmarButt" target="_blank" class="social-icon" data-tooltip="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/asmar-butt-84aa02228/" target="_blank" class="social-icon" data-tooltip="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse"></div>
+                    <span>Scroll Down</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="about-content">
+                        <p class="text-lg leading-relaxed mb-6">
+                            A dynamic and forward-thinking data scientist with a passionate commitment to leveraging analytical techniques to solve real-world challenges. Combining strong technical expertise in Python, SQL, and machine learning with a strategic problem-solving approach.
+                        </p>
+                        <div class="skills-section">
+                            <h3 class="text-xl font-semibold mb-6">Technical Proficiencies</h3>
+                            <div class="skill-bars">
+                                <div class="skill-bar" data-aos="fade-right">
+                                    <div class="flex justify-between mb-2">
+                                        <span>Python</span>
+                                        <span>95%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" data-width="95"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar" data-aos="fade-right" data-aos-delay="100">
+                                    <div class="flex justify-between mb-2">
+                                        <span>Machine Learning</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar" data-aos="fade-right" data-aos-delay="200">
+                                    <div class="flex justify-between mb-2">
+                                        <span>Deep Learning</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" data-width="85"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <h3 class="text-xl font-semibold mb-6">Tools & Technologies</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="tech-item" data-aos="zoom-in">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="tech-item" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fas fa-brain"></i>
+                                <span>TensorFlow</span>
+                            </div>
+                            <div class="tech-item" data-aos="zoom-in" data-aos-delay="300">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section id="timeline" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title glow" data-aos="fade-up">Education & Journey</h2>
+            <div class="timeline-wrapper">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-bold mb-2">2024 - 2028</h3>
+ <p class="mb-2">Virtual University of Pakistan</p>
+                        <div class="tech-tags">
+                            <span>BS Computer Science</span>
+                            <span>Expected Graduation: 2028</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-badge">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-bold mb-2">2024 - Present</h3>
+                        <p class="mb-2">Professional Development</p>
+                        <div class="tech-tags">
+                            <span>Machine Learning</span>
+                            <span>Data Science</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-badge">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-bold mb-2">Summer 2024</h3>
+                        <p class="mb-2">Started Data Science Journey</p>
+                        <div class="tech-tags">
+                            <span>Machine Learning Basics</span>
+                            <span>Data Analysis</span>
+                            <span>Python Programming</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="project-title">Breast Cancer Prediction</h3>
+                        <p class="project-description">
+                            Deep learning model for breast cancer prediction using the Breast Cancer Wisconsin dataset. 
+                            Achieved high accuracy in classifying cancer types.
+                        </p>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Neural Networks</span>
+                        </div>
+                        <a href="https://github.com/AsmarButt/Deep-learning-Projects/blob/main/Deep_Learnin_for_Breast_Cancer_Prediction.ipynb" 
+                           class="project-link" target="_blank">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="project-title">MNIST Digit Recognition</h3>
+                        <p class="project-description">
+                            CNN-based deep learning model achieving 95.99% accuracy in classifying handwritten digits.
+                        </p>
+                        <div class="tech-tags">
+                            <span>CNN</span>
+                            <span>Deep Learning</span>
+                            <span>Computer Vision</span>
+                        </div>
+                        <a href="https://github.com/AsmarButt/Deep-learning-Projects/blob/main/Mnist_Dataset_Deep-Learning_Project.ipynb" 
+                           class="project-link" target="_blank">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3 class="project-title">Sonar Rock vs Mine Prediction</h3>
+                        <p class="project-description">
+                            Machine learning model for underwater object classification using sonar signals.
+                        </p>
+                        <div class="tech-tags">
+                            <span>Machine Learning</span>
+                            <span>Classification</span>
+                            <span>Signal Processing</span>
+                        </div>
+                        <a href="https://github.com/AsmarButt/Machine-learning-Projects/blob/main/Machine_learning_Project_Sonar_Rock_vs_Mine_Prediction.ipynb" 
+                           class="project-link" target="_blank">
+                            View Project <i class="fas ```html
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="certification-card" data-aos="fade-up">
+                    <div class="cert-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Microsoft Excel Mastery</h3>
+                    <div class="certification-details">
+                        <p>Advanced Excel techniques for data analysis including:</p>
+                        <ul>
+                            <li>Pivot Tables and Power Pivot</li>
+                            <li>Data Modeling</li>
+                            <li>Advanced Formulas</li>
+                        </ul>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/K2CUR3SY7JT9" 
+                           target="_blank" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Engineering Fundamentals</h3>
+                    <div class="certification-details">
+                        <p>Comprehensive data engineering skills including:</p>
+                        <ul>
+                            <li>ETL Processes</li>
+                            <li>Data Warehousing</li>
+                            <li>Big Data Technologies</li>
+                        </ul>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/D55LZPUEZC38" 
+                           target="_blank" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cert-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python for Data Science</h3>
+                    <div class="certification-details">
+                        <p>Advanced Python programming for data science:</p>
+                        <ul>
+                            <li>NumPy & Pandas</li>
+                            <li>Data Visualization</li>
+                            <li>Machine Learning Libraries</li>
+                        </ul>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/F747RRHZ8FBK" 
+                           target="_blank" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+    <div class="max-w-lg mx-auto contact-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-info text-center mb-8">
+            <p class="text-lg mb-4">Let's collaborate on your next data science project!</p>
+            <div class="social-links flex justify-center space-x-6 mb-6">
                 <a href="https://github.com/AsmarButt" target="_blank" class="social-icon">
                     <i class="fab fa-github"></i>
                 </a>
@@ -38,120 +372,48 @@
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
-        </div>
-    </div>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 section-animate">
-        <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- ML Projects -->
-            <div class="glass-card p-6">
-                <h3 class="text-2xl font-semibold mb-4">Breast Cancer Prediction</h3>
-                <p class="text-gray-300 mb-6">Deep learning model for breast cancer prediction using the Breast Cancer Wisconsin dataset. Achieved high accuracy in classifying cancer types using neural networks.</p>
-                <div class="flex justify-end">
-                    <a href="https://github.com/AsmarButt/Deep-learning-Projects/blob/main/Deep_Learnin_for_Breast_Cancer_Prediction.ipynb" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Project →</a>
-                </div>
-            </div>
-
-            <div class="glass-card p-6">
-                <h3 class="text-2xl font-semibold mb-4">MNIST Digit Recognition</h3>
-                <p class="text-gray-300 mb-6">CNN-based model achieving 95.99% accuracy in handwritten digit recognition using the MNIST dataset.</p>
-                <div class="flex justify-end">
-                    <a href="https://github.com/AsmarButt/Deep-learning-Projects/blob/main/Mnist_Dataset_Deep-Learning_Project.ipynb" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Project →</a>
-                </div>
-            </div>
-
-            <div class="glass-card p-6">
-                <h3 class="text-2xl font-semibold mb-4">Sonar Rock vs Mine Prediction</h3>
-                <p class="text-gray-300 mb-6">Machine learning model for classifying sonar signals as rock or mine, enhancing underwater exploration accuracy.</p>
-                <div class="flex justify-end">
-                    <a href="https://github.com/AsmarButt/Machine-learning-Projects/blob/main/Machine_learning_Project_Sonar_Rock_vs_Mine_Prediction.ipynb" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Project →</a>
-                </div>
-            </div>
-
-            <!-- Certifications -->
-            <div class="glass-card p-6">
-                <h3 class="text-2xl font-semibold mb-4">Microsoft Excel Mastery</h3>
-                <p class="text-gray-300 mb-6">Advanced Excel certification focusing on data analysis and visualization techniques.</p>
-                <div class="flex justify-end">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/K2CUR3SY7JT9" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Certificate →</a>
-                </div>
-            </div>
-
-            <div class="glass-card p-6">
-                <h3 class="text-2xl font-semibold mb-4">Data Engineering Fundamentals</h3>
-                <p class="text-gray-300 mb-6">Comprehensive introduction to data engineering principles and practices.</p>
-                <div class="flex justify-end">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/D55LZPUEZC38" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Certificate →</a>
-                </div>
-            </div>
-
-            <div class="glass-card p-6">
-                <h3 class="text-2xl font-semibold mb-4">Python for Data Science</h3>
-                <p class="text-gray-300 mb-6">Advanced Python programming for AI and Data Science applications.</p>
-                <div class="flex justify-end">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/F747RRHZ8FBK" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Certificate →</a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-12">
-            <a href="https://www.linkedin.com/in/asmar-butt-84aa02228/" target="_blank" class="text-indigo-400 hover:text-indigo-300">
-                View More Certificates on LinkedIn →
+            <a href="mailto:asmarahmadbutt786@gmail.com" class="email-link">
+                asmarahmadbutt786@gmail.com
             </a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 section-animate">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
-            <div class="glass-card p-8">
-                <p class="text-lg mb-6">A dynamic and forward-thinking data scientist with a passionate commitment to leveraging analytical techniques to solve real-world challenges. Combining strong technical expertise in Python, SQL, and machine learning with a strategic problem-solving approach, I extract meaningful insights from complex datasets and translate technical findings into actionable business strategies.</p>
-                
-                <h3 class="text-xl font-semibold mb-4">Technical Proficiencies:</h3>
-                <ul class="list-disc list-inside mb-6 space-y-2">
-                    <li>Programming Languages: Python (NumPy, Pandas, Scikit-learn), SQL</li>
-                    <li>Machine Learning: Advanced algorithms, predictive modeling, supervised/unsupervised learning</li>
-                    <li>Data Analysis: Statistical analysis, data visualization, exploratory data techniques</li>
-                    <li>Tools: Jupyter Notebook, Google Colab, Git, GitHub, Microsoft Excel</li>
-                </ul>
-
-                <h3 class="text-xl font-semibold mb-4">Learning Journey Highlights:</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Actively building practical skills through online courses and personal projects</li>
-                    <li>Completing hands-on data science certifications and tutorials</li>
-                    <li>Participating in coding challenges and data science competitions</li>
-                    <li>Developing a portfolio of personal and academic data science projects</li>
-                </ul>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <input type="text" id="name" class="form-input" required placeholder=" ">
+                <label for="name">Your Name</label>
+                <div class="form-line"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 section-animate">
-        <h2 class="text-4xl font-bold text-center mb-16">Get in Touch</h2>
-        <div class="max-w-lg mx-auto glass-card p-8">
-            <p class="text-center mb-8">Feel free to reach out for collaborations or just a friendly hello</p>
-            <form class="space-y-6">
-                <input type="text" class="w-full p-3 bg-opacity-50 bg-gray-800 rounded-lg" placeholder="Your Name" required>
-                <input type="email" class="w-full p-3 bg-opacity-50 bg-gray-800 rounded-lg" placeholder="Your Email" required>
-                <textarea class="w-full p-3 bg-opacity-50 bg-gray-800 rounded-lg" rows="4" placeholder="Your Message" required></textarea>
-                <div class="text-center">
-                    <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg transition-all duration-300">
-                        Send Message
-                    </button>
-                </div>
-            </form>
-            <div class="mt-8 text-center">
-                <p class="mb-4">Or reach me directly at:</p>
-                <a href="mailto:asmarahmadbutt786@gmail.com" class="text-indigo-400 hover:text-indigo-300">asmarahmadbutt786@gmail.com</a>
+            <div class="form-group">
+                <input type="email" id="email" class="form-input" required placeholder=" ">
+                <label for="email">Your Email</label>
+                <div class=" form-line"></div>
             </div>
-        </div>
-    </section>
+            <div class="form-group">
+                <textarea id="message" class="form-input" rows="4" required placeholder=" "></textarea>
+                <label for="message">Your Message</label>
+                <div class="form-line"></div>
+            </div>
+            <button type="submit" class="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+            </button>
+        </form>
+    </div>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+<!-- Footer -->
+<footer class="py-8 relative">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-400">© 2025 Asmar Ahmad. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="script.js"></script>
 </body>
 </html>
